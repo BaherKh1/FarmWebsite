@@ -1,0 +1,81 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #f8f8f8;
+}
+
+.parallax-container {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px; /* Required for parallax */
+    perspective-origin: 0% 0%; /* Fixes origin for Safari/iOS */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0% 0%; /* Fixes origin for Safari/iOS */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Ensure layers cover full width */
+    height: 100%; /* Ensure layers cover full height */
+}
+
+/* Far background layer */
+.parallax-layer-back {
+    transform: translateZ(-2px) scale(3); /* Adjust scale for desired effect */
+    /* Using placeholder images. Replace with your actual image URLs. */
+    background-image: url('https://placehold.co/1920x1080/4CAF50/ffffff?text=Olive+Groves');
+    z-index: -2; /* Ensure it's behind other elements */
+}
+
+/* Mid background layer */
+.parallax-layer-base {
+    transform: translateZ(-1px) scale(2); /* Adjust scale for desired effect */
+    /* Using placeholder images. Replace with your actual image URLs. */
+    background-image: url('https://placehold.co/1920x1080/8BC34A/ffffff?text=Date+Palms');
+    z-index: -1; /* Ensure it's behind content but in front of back */
+}
+
+/* Foreground content layer */
+.parallax-layer-foreground {
+    transform: translateZ(0);
+    position: relative; /* Make it relative to stack properly */
+    z-index: 1; /* Ensure content is on top */
+    padding-top: 20vh; /* Adjust as needed to push content down from top */
+}
+
+.content-section {
+    background-color: #ffffff; /* Solid background for readability */
+    padding: 6rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 1.5rem; /* Rounded corners */
+}
+
+.hero-section {
+    height: 100vh; /* Full viewport height for hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    position: relative;
+    z-index: 10; /* Ensure hero text is on top */
+}
+
+/* Fallback for image loading errors */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
