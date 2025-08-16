@@ -42,3 +42,18 @@ body {
         padding: 15rem; /* md:p-16 */
     }
 }
+.bg-nav-image {
+  background-image: url('/Nav1.jpg');
+  background-size: cover; /* This makes the image cover the entire element */
+  background-position:center; /* This centers the image */
+  /* You can also add a background-color as a fallback for when the image doesn't load */
+  background-color: #15803d; /* a shade of green */
+}
+
+.bg-white-image {
+  background-image: url('/');
+  background-size: cover; /* This makes the image cover the entire element */
+  background-position:center; /* This centers the image */
+  /* You can also add a background-color as a fallback for when the image doesn't load */
+  background-color: #15803d; /* a shade of green */
+}
